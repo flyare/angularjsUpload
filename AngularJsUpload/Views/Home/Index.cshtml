@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Upload File</h2>
+<div ng-app="myApp">
+    <div ng-controller="uploadFileController">
+        <p>{{helloWorld}}</p>
+        <input type="file" ng-file-model="myFile"/>
+        <img style="height: 200px;" ng-src="{{imageFile}}" alt="Preview image"/>
+        <input type="button" ng-click="uploadFile()" value="Upload now"/>
+    </div>
+</div>
+
+@section scripts
+{
+    <script src="~/MyScripts/angular.js"></script>
+    <script src="~/MyScripts/uploadFile.js"></script>
+}
