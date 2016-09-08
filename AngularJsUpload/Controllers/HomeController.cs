@@ -15,9 +15,12 @@ namespace AngularJsUpload.Controllers
         }
 
         [HttpPost]
-        public ActionResult UploadFile(HttpPostedFileBase file)
+        public void UploadFile(HttpPostedFileBase file)
         {
-            return View("Index");
+            if (file != null)
+            {
+                file.SaveAs(Server.MapPath("~/UploadFile/") + file.FileName);
+            }
         }
     }
 }
